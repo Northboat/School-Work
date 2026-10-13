@@ -1,0 +1,22 @@
+server:
+  port: 12345
+
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: ""
+
+#mysql:
+#  host: "127.0.0.1"
+#  port: 3306
+#  user: "root"
+#  password: ""
+#  dbname: "student_db"
+
+#redis:
+#  host: "127.0.0.1"
+#  port: 6379
+#  password: ""
+#  db: 0

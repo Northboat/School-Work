@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>JVMTest</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - JVMTest</name>
+    <packaging>jar</packaging> <!-- 放在根节点 <project> 下 -->
+  <url>http://maven.apache.org</url>
+    <dependencies>
+        <!-- JMH 核心依赖 -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>1.36</version>
+        </dependency>
+        <!-- JMH 注解处理器 -->
+        <dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>1.36</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Java 编译插件，指定编码为 UTF-8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- 版本可根据实际情况调整 -->
+                <configuration>
+                    <source>17</source> <!-- 对应项目的 JDK 版本 -->
+                    <target>17</target>
+                    <encoding>UTF-8</encoding> <!-- 关键：指定编码为 UTF-8 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
