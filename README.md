@@ -2,6 +2,8 @@
 
 在校期间的课程实验与学习记录合集，由原 `NEUQ-Experiment`（本科，东北大学秦皇岛分校）与 `XDU-Learning`（研究生，西安电子科技大学）两个仓库合并而来。
 
+整理后的笔记已归档到博客 [Northboat's Blog](https://northboat.github.io/)，各实验与学习记录对应的文章链接见下一级目录的 `README.md`。
+
 ```
 School-Work
 ├── NEUQ-Experiment          本科课程实验
