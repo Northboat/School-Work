@@ -1,16 +1,24 @@
 data segment
 in0 equ 298h
+ioc equ 28ah
+iok equ 28bh
 data ends
 code segment
 assume cs:code,ds:data
 start:
     mov ax,data
     mov ds,ax
+    mov dx,iok
+    mov al,89h
+    out dx,al
     s1:
     mov dx,in0
     out dx,al
-    mov cx,0ffh
-    s:loop s
+    readc:
+    mov dx,ioc
+    in al,dx
+    test al,00000001b
+    jz readc
     mov dx,in0
     in al,dx
     mov bl,al
@@ -48,10 +56,3 @@ disp endp
     
 code ends
 end start
-
-
-
-
-
-
-

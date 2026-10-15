@@ -10,21 +10,30 @@ start:
     mov ax,data
     mov ds,ax
     mov dx,iok
-    mov al,36h
+    mov al,14h
     out dx,al
     mov dx,io0
-    mov ax,1000
+    mov al,9
     out dx,al
-    mov al,ah
-    out dx,al
-    mov dx,iok
-    mov al,76h
-    out dx,al
-    mov dx,io1
-    mov ax,1000
-    out dx,al
-    mov al,ah
-    out dx,al
+    r1:mov dx,io0
+    in al,dx
+    call dis
+    mov ah,1
+    int 16h
+    jz r1
+    mov ah,4ch
+    int 21h
+dis proc
+    push ax
+    push dx
+    add al,30h
+    mov dl,al
+    mov ah,2
+    int 21h
+    pop dx
+    pop ax
+    ret
+dis endp
 here:jmp here
 code ends
-end start    
+end start
